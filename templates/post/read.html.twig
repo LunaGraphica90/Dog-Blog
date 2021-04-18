@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="col-md-9">
+  <div class="col-md-12 page-body">
+    <div class="row">
+
+  
+    <div class="sub-title">
+        <a href="{{path('post_browse')}}" title="Go to Home Page"><h2>Back Home</h2></a>
+        <a href="#comment" class="smoth-scroll"><i class="icon-bubbles"></i></a>
+    </div>
+
+    <div class="col-md-12 content-page">
+        <div class="col-md-12 blog-post">
+        
+        
+        <!-- Post Headline Start -->
+        <div class="post-title">
+            <h1>{{ post.title }}</h1> 
+            </div>
+            <!-- Post Headline End -->
+            
+            
+        <!-- Post Detail Start -->
+        <div class="post-info">
+            <span>{{ post.createdAt|date('d M Y') }} / by <a href="#" target="_blank">{{ post.author is null ? 'Anonymous' : post.author.firstname }}</a></span>
+        </div>
+            <!-- Post Detail End -->
+        <p>{{ post.body }}</p>
+    </div>
+
+
+<!-- Post Comment Start -->
+        <div id="comment" class="comment">
+        <h3>Comments</h3>
+        {% for comment in post.comments %}
+        
+        <blockquote class="margin-top-40 margin-bottom-40">
+            <strong>{{ comment.username }}</strong>
+            <p>{{ comment.body }}</p>
+            <small>Published on {{ comment.publishedAt|date('d M Y')}}</small>
+        </blockquote>
+        
+        
+        {% endfor %}
+
+        </div>
+<!-- Post Comment End -->
+
+     <!-- Endpage Box (Popup When Scroll Down) Start -->
+{#      <div id="scroll-down-popup" class="endpage-box">
+       <h4>Read Also</h4>
+       <a href="#">{{ random(post.title) }}</a>
+      </div> #}
+      <!-- Endpage Box (Popup When Scroll Down) End -->
+
+{% endblock %}
