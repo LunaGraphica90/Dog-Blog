@@ -1,5 +1,11 @@
 # Dog-Blog
 
+
+ ![Dog Blog](http://devweb.luna-graphica.fr/captures/Dog.png) 
+ 
+ ![Dog Blog](http://devweb.luna-graphica.fr/captures/Dog2.png) 
+ 
+
 ## L'objectif ?
 Blog fictif pour l'apprentissage de Symfony et de Doctrine
 
